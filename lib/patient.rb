@@ -15,12 +15,6 @@ class Patient
     @@all
   end
   
-  def doctor 
-    Doctor.all.find do |d|
-      d.patient
-    end
-  end
-  
   def new_appointment(doctor, date)
     appt = Appointment.new(self, doctor, date)
     

@@ -8,7 +8,6 @@ class Artist
   def initialize(name)
     @name = name
     @@all << self
-    
   end 
   
   
@@ -19,12 +18,14 @@ class Artist
   def new_song(name, genre)
     song = Song.new(name, self, genre)
     self.songs.last
+    # binding.pry
   end
   
   def songs 
     Song.all.select do |s|
       s.artist == self
     end
+   
   end
   
 
